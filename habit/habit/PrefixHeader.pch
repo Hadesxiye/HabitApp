@@ -1,0 +1,63 @@
+//
+//  PrefixHeader.pch
+//  habit
+//
+//  Created by 王浩祯 on 2018/3/19.
+//  Copyright © 2018年 王浩祯. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+
+//屏幕长宽
+#define SC_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define SC_HEIGHT [UIScreen mainScreen].bounds.size.height
+//rgb颜色
+#define ColorRGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+//顶栏高度
+#define NAVSTASTUS ([[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height)
+//底栏高度
+#define TABBAR_HEIGHT (SCREEN_HEIHT == 812.0 ? 83 : 49)
+
+#define SafeAreaBottomHeight (SCREEN_HEIHT == 812.0 ? 34 : 0)
+
+/////////////////配色区//////////////////////////
+#define myBackgroundColorWhite ColorRGB(247, 241, 227) //白色
+#define myBackgroundColorYellow ColorRGB(255, 252, 193) //黄色
+#define myBackgroundColorGray ColorRGB(209, 204, 192) //灰色
+#define myBackgroundColorBlue ColorRGB(186, 237, 255) //蓝色
+#define myBackgroundColorPurple ColorRGB(250, 223, 255) //紫色
+
+#ifdef DEBUG
+
+#define WHZLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define WHZLog(...)
+
+#endif
+
+/////////////////////////////////////////////////
+//关闭tableview的自动布局，ios11.0新功能，tableview等自动布局
+//#ifdef __IPHONE_11_0
+//    if ([_tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+//        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }
+//#endif
+
+//安全区
+//    if (@available(iOS 11.0, *)) {
+//
+//        id item =  superView.safeAreaLayoutGuide
+//    } else {
+//
+//        }
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
